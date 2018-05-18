@@ -77,4 +77,4 @@ Output Format
 Print two space-separated integers on one line of output:
 1. The first integer: the number of apples that fall on Sam's house.
 2. The second integer: the number of oranges that fall on Sam's house.
- */
+*/

@@ -4,13 +4,13 @@ public class P06_BirthdayChocolate
 {
     public static void main(String[] args)
     {
-        int[] s = {1, 2, 1, 3, 2};
-        int[] s1 = {1, 1, 1, 1, 1};
-        int[] s2 = {4};
+        int[] s1 = {1, 2, 1, 3, 2};
+        int[] s2 = {1, 1, 1, 1, 1};
+        int[] s3 = {4};
 
-        System.out.println(2 == solve(5, s, 3, 2));
-        System.out.println(0 == solve(5, s1, 3, 2));
-        System.out.println(1 == solve(1, s2, 4, 1));
+        System.out.println(2 == solve(5, s1, 3, 2));
+        System.out.println(0 == solve(5, s2, 3, 2));
+        System.out.println(1 == solve(1, s3, 4, 1));
     }
 
     static int solve(int n, int[] s, int d, int m)
@@ -51,4 +51,4 @@ The second line contains 'n' space-separated integers s[i], the numbers on the c
 The third line contains two space-separated integers, 'd' and 'm', Ron's birth day and his birth month.
 
 Constraints
- */
+*/
