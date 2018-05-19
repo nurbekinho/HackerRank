@@ -25,7 +25,7 @@ public class P09_DayOfTheProgrammer
     }
 }
 
-// NOT SOLVED //
+// SOLVED //
 
 /*
 Marie invented a Time Machine and wants to test it by time-traveling to visit Russia on the Day of the Programmer (the
