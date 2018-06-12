@@ -1,37 +1,72 @@
 package net.nurbek.HackerRank.Algorithms.Strings;
 
+import java.util.*;
+
 public class P04_TwoCharacters
 {
     public static void main(String[] args)
     {
-        System.out.println(5 == twoCharacters("beabeefeab"));
-        //System.out.println(5 == twoCharacters("abaebabebebfbeabb"));
+        ////System.out.println(2 == twoCharacters("ab"));
+        //System.out.println(5 == twoCharacters("beabeefeab"));
+        //System.out.println(4 == twoCharacters("abaacdabd"));
+        ////System.out.println(0 == twoCharacters("uyetuppelecblwipdsqabzsvyfaezeqhpnalahnpkdbhzjglcuqfjnzpmbwprelbayyzovkhacgrglrdpmvaexkgertilnfoo"));
+
+        // test #8
+        //System.out.println(8 == twoCharacters("cwomzxmuelmangtosqkgfdqvkzdnxerhravxndvomhbokqmvsfcaddgxgwtpgpqrmeoxvkkjunkbjeyteccpugbkvhljxsshp"));
+
+        // test #13
+        String s = "txnbvnzdvasknhlmcpkbxdvofimsvqbvkswlkrchohwuplfujvlwpxtlcixpajjpaskrnjneelqdbxtiyeianqjqaikbukpic";
+        System.out.println(6 == twoCharacters(s));
     }
 
     static int twoCharacters(String s)
     {
-        int i = 0;
-        while(i < s.length() - 1)
+        List<Character> characterList = new ArrayList();
+
+        for(int i = 0; i < s.length(); i++)
         {
-            String c1 = Character.toString(s.charAt(i));
-            String c2 = Character.toString(s.charAt(i+1));
-
-            if(c1.equals(c2))
-            {
-                s = s.replaceAll(c1, "");
-                i = 0;
-            }
-
-            i++;
+            char c1 = s.charAt(i);
+            if(!characterList.contains(c1)) characterList.add(c1);
         }
 
-        if(s.length() < 1) return 0;
+        if(characterList.size() == 2) return 2;
 
-        return 0;
+        int maxLength = 0;
+        for(int i = 0; i < characterList.size(); i++)
+        {
+            for(int j = i + 1; j < characterList.size(); j++)
+            {
+                String newStr = "";
+                for(Character c : s.toCharArray())
+                {
+                    if(c == characterList.get(i) || c == characterList.get(j))
+                    {
+                        newStr += c;
+                    }
+                }
+
+                if(isValid(newStr) && newStr.length() > maxLength)
+                {
+                    maxLength = newStr.length();
+                }
+            }
+        }
+
+        return maxLength;
+    }
+
+    private static boolean isValid(String s)
+    {
+        for(int i = 0; i < s.length() - 1; i++)
+        {
+            if(s.charAt(i) == s.charAt(i + 1)) return false;
+        }
+
+        return true;
     }
 }
 
-// NOT SOLVED //
+// SOLVED //
 
 /*
 In this challenge, you will be given a string. You must remove characters until the string is made up of any two
