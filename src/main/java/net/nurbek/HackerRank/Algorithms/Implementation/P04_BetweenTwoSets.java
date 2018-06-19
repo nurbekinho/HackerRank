@@ -12,11 +12,52 @@ public class P04_BetweenTwoSets
 
     static int getTotalX(int[] a, int[] b)
     {
-        return 0;
+        int lcm = LCM(a);
+        int gcd = GCD(b);
+        int count = 0;
+
+        for(int i = lcm, j = 2; i <= gcd; i = lcm * j, j++)
+        {
+            if(gcd % i==0) count++;
+        }
+
+        return count;
+    }
+
+    static int GCD(int a, int b)
+    {
+        return b == 0 ? a : GCD(b, a % b);
+    }
+
+    static int GCD(int[] arr)
+    {
+        int gcd = arr[0];
+        for(int i = 1; i < arr.length; i++)
+        {
+            gcd = GCD(gcd, arr[i]);
+        }
+
+        return gcd;
+    }
+
+    static int LCM(int a, int b)
+    {
+        return a * (b / GCD(a, b));
+    }
+
+    static int LCM(int[] arr)
+    {
+        int lcm = arr[0];
+        for(int i = 1; i < arr.length; i++)
+        {
+            lcm = LCM(lcm, arr[i]);
+        }
+
+        return lcm;
     }
 }
 
-// NOT SOLVED //
+// SOLVED //
 
 /*
 You will be given two arrays of integers. You will be asked to determine all integers that satisfy the following two
