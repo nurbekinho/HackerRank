@@ -3,10 +3,8 @@ package net.nurbek.HackerRank.Java.BigNumber;
 import java.math.BigInteger;
 import java.util.Scanner;
 
-public class P01_JavaBigInteger
-{
-	public static void main(String[] args)
-	{
+public class P01_JavaBigInteger {
+	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 
 		String a = scan.next();
