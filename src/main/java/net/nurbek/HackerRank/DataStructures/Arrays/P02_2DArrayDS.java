@@ -1,9 +1,7 @@
 package net.nurbek.HackerRank.DataStructures.Arrays;
 
-public class P02_2DArrayDS
-{
-    public static void main(String[] args)
-    {
+public class P02_2DArrayDS {
+    public static void main(String[] args) {
         System.out.println(hourglassSum(new int[][]{
                 {1, 1, 1, 0, 0, 0},
                 {0, 1, 0, 0, 0, 0},
