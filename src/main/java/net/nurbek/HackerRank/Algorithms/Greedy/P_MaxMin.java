@@ -4,13 +4,11 @@ import java.util.Arrays;
 
 public class P_MaxMin
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         System.out.println(maxMin(3, new int[]{10, 100, 300, 200, 1000, 20, 30}));
     }
 
-    static int maxMin(int k, int[] arr)
-    {
+    static int maxMin(int k, int[] arr) {
         Arrays.sort(arr);
 
         int min = 1000000000;
