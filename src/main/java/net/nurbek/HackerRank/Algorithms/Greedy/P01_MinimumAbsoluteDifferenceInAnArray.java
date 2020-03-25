@@ -4,13 +4,11 @@ import java.util.Arrays;
 
 public class P01_MinimumAbsoluteDifferenceInAnArray
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         System.out.println(minimumAbsoluteDifference(new int[]{1, -3, 71, 68, 17}));
     }
 
-    static int minimumAbsoluteDifference(int[] arr)
-    {
+    static int minimumAbsoluteDifference(int[] arr) {
         Arrays.sort(arr);
 
         int min = 1000000000;
